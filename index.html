@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 自动化服务 | 一人公司</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#0a0e17',
+            accent: '#00d4aa',
+            accentDim: '#00a884',
+            surface: '#111827',
+            border: '#1f2937',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .tech-bg {
+      background-color: #0a0e17;
+      background-image:
+        linear-gradient(rgba(0, 212, 170, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 170, 0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .glow { box-shadow: 0 0 40px rgba(0, 212, 170, 0.15); }
+    .glow-sm { box-shadow: 0 0 20px rgba(0, 212, 170, 0.1); }
+    .gradient-border { border: 1px solid rgba(0, 212, 170, 0.2); }
+  </style>
+</head>
+<body class="tech-bg text-gray-100 min-h-screen antialiased">
+  <!-- 导航 -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-semibold text-accent">AI 自动化</a>
+      <div class="flex gap-8">
+        <a href="#services" class="text-gray-400 hover:text-accent transition">服务</a>
+        <a href="#cases" class="text-gray-400 hover:text-accent transition">案例</a>
+        <a href="#pricing" class="text-gray-400 hover:text-accent transition">价格</a>
+        <a href="#contact" class="text-gray-400 hover:text-accent transition">联系</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">一人公司 · 专注自动化</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+        用 AI 与自动化<br />释放你的业务潜力
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        定制化流程自动化、智能数据处理、集成与运维，让重复工作交给机器，让你专注创造。
+      </p>
+    </div>
+  </header>
+
+  <!-- 1. 服务介绍 -->
+  <section id="services" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">服务介绍</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl">我们提供从需求分析到上线维护的一站式 AI 自动化方案。</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
+          <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">1</div>
+          <h3 class="text-lg font-semibold text-white mb-2">流程自动化</h3>
+          <p class="text-gray-400 text-sm">RPA、工作流编排、API 对接，把重复操作变成一键执行。</p>
+        </div>
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
+          <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">2</div>
+          <h3 class="text-lg font-semibold text-white mb-2">智能数据处理</h3>
+          <p class="text-gray-400 text-sm">文档解析、数据清洗、报表生成，让 AI 理解你的业务数据。</p>
+        </div>
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
+          <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">3</div>
+          <h3 class="text-lg font-semibold text-white mb-2">集成与运维</h3>
+          <p class="text-gray-400 text-sm">系统对接、监控告警、脚本与工具开发，稳定可靠运行。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 客户案例 -->
+  <section id="cases" class="py-20 px-6 bg-surface/30">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">客户案例</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl">来自不同行业的落地实践与效果。</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-dark rounded-xl p-6 gradient-border">
+          <p class="text-accent text-sm font-medium mb-2">电商 · 订单与库存</p>
+          <h3 class="text-lg font-semibold text-white mb-2">多平台订单自动同步与库存预警</h3>
+          <p class="text-gray-400 text-sm">对接主流电商 API，每日自动同步订单与库存，异常自动告警，人力节省约 60%。</p>
+        </div>
+        <div class="bg-dark rounded-xl p-6 gradient-border">
+          <p class="text-accent text-sm font-medium mb-2">内容 · 运营</p>
+          <h3 class="text-lg font-semibold text-white mb-2">内容采集与多平台一键发布</h3>
+          <p class="text-gray-400 text-sm">从指定来源采集内容，经规则与 AI 润色后自动发布到公众号、知乎等，发布效率提升 3 倍。</p>
+        </div>
+        <div class="bg-dark rounded-xl p-6 gradient-border">
+          <p class="text-accent text-sm font-medium mb-2">内部 · 行政</p>
+          <h3 class="text-lg font-semibold text-white mb-2">合同与报销单智能识别与归档</h3>
+          <p class="text-gray-400 text-sm">OCR + 规则提取关键信息，自动归档并触发审批流，处理时间从小时级降到分钟级。</p>
+        </div>
+        <div class="bg-dark rounded-xl p-6 gradient-border">
+          <p class="text-accent text-sm font-medium mb-2">开发 · 效能</p>
+          <h3 class="text-lg font-semibold text-white mb-2">CI/CD 与发布自动化</h3>
+          <p class="text-gray-400 text-sm">代码提交触发构建、测试与灰度发布，配合通知与回滚，发布频率与稳定性双提升。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 价格表 -->
+  <section id="pricing" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">价格表</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl">按项目或按需报价，无隐藏费用。</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
+          <h3 class="text-lg font-semibold text-white mb-2">咨询与方案</h3>
+          <p class="text-3xl font-bold text-accent mb-1">¥999<span class="text-base font-normal text-gray-400">/次</span></p>
+          <p class="text-gray-400 text-sm mb-4">1–2 小时需求沟通与方案建议</p>
+          <ul class="text-gray-400 text-sm space-y-2 text-left">
+            <li>· 需求梳理与可行性评估</li>
+            <li>· 技术路线与工作量粗估</li>
+            <li>· 可延展为正式项目报价</li>
+          </ul>
+        </div>
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border border-accent/50 glow text-center relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 bg-accent text-dark text-xs font-medium rounded-full">推荐</span>
+          <h3 class="text-lg font-semibold text-white mb-2">标准项目</h3>
+          <p class="text-3xl font-bold text-accent mb-1">按项目</p>
+          <p class="text-gray-400 text-sm mb-4">根据需求与工期单独报价</p>
+          <ul class="text-gray-400 text-sm space-y-2 text-left">
+            <li>· 需求确认与排期</li>
+            <li>· 开发、联调与文档</li>
+            <li>· 1 个月免费问题修复</li>
+          </ul>
+        </div>
+        <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
+          <h3 class="text-lg font-semibold text-white mb-2">长期维护</h3>
+          <p class="text-3xl font-bold text-accent mb-1">¥2,999<span class="text-base font-normal text-gray-400">/月</span></p>
+          <p class="text-gray-400 text-sm mb-4">已有系统运维与小幅迭代</p>
+          <ul class="text-gray-400 text-sm space-y-2 text-left">
+            <li>· 监控与故障响应</li>
+            <li>· 小需求与优化</li>
+            <li>· 月度报告与建议</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 联系表单 -->
+  <section id="contact" class="py-20 px-6 bg-surface/30">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-white mb-4">联系我</h2>
+      <p class="text-gray-400 mb-8">留下需求或问题，我会尽快回复。</p>
+      <form class="space-y-4" action="#" method="post" id="contact-form">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-1">姓名 / 称呼</label>
+          <input type="text" id="name" name="name" required
+            class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition" placeholder="您的称呼" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-1">邮箱</label>
+          <input type="email" id="email" name="email" required
+            class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition" placeholder="your@email.com" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-300 mb-1">需求简述</label>
+          <textarea id="message" name="message" rows="4" required
+            class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition resize-none" placeholder="简单描述您的场景或想自动化的流程..."></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 px-6 rounded-lg bg-accent text-dark font-semibold hover:bg-accentDim transition">
+          发送
+        </button>
+      </form>
+      <p class="text-gray-500 text-sm mt-4">提交后我将通过邮箱与您联系，不会用于其他用途。</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-border">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-sm">© 2025 AI 自动化服务 · 一人公司</p>
+      <div class="flex gap-6">
+        <a href="#services" class="text-gray-500 hover:text-accent text-sm">服务</a>
+        <a href="#cases" class="text-gray-500 hover:text-accent text-sm">案例</a>
+        <a href="#pricing" class="text-gray-500 hover:text-accent text-sm">价格</a>
+        <a href="#contact" class="text-gray-500 hover:text-accent text-sm">联系</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('感谢提交！我会尽快通过邮箱回复您。（当前为前端演示，未配置后端）');
+    });
+  </script>
+</body>
+</html>

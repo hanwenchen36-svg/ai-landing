@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lever Lab | AI 自动化服务</title>
+  <meta name="description" content="Lever Lab - AI 与流程自动化服务，定制化方案与交付" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -50,11 +51,17 @@
         <img src="logo.png" alt="Lever Lab" class="h-9 object-contain" />
         <span class="text-xl font-semibold text-accent">Lever Lab</span>
       </a>
-      <div class="flex gap-8">
-        <a href="#about" class="text-gray-400 hover:text-accent transition">关于</a>
-        <a href="#services" class="text-gray-400 hover:text-accent transition">服务</a>
-        <a href="#cases" class="text-gray-400 hover:text-accent transition">案例</a>
-        <a href="#contact" class="text-gray-400 hover:text-accent transition">联系</a>
+      <div class="flex items-center gap-8">
+        <a href="#about" class="text-gray-400 hover:text-accent transition" data-i18n="nav_about">关于</a>
+        <a href="#services" class="text-gray-400 hover:text-accent transition" data-i18n="nav_services">服务</a>
+        <a href="#cases" class="text-gray-400 hover:text-accent transition" data-i18n="nav_cases">案例</a>
+        <a href="#process" class="text-gray-400 hover:text-accent transition" data-i18n="nav_process">流程</a>
+        <a href="#contact" class="text-gray-400 hover:text-accent transition" data-i18n="nav_contact">联系</a>
+        <span class="text-gray-500 text-sm">
+          <button type="button" onclick="setLang('zh')" id="btn-lang-zh" class="px-1.5 font-medium text-accent border-b border-accent">中文</button>
+          <span class="mx-1">|</span>
+          <button type="button" onclick="setLang('en')" id="btn-lang-en" class="px-1.5 hover:text-accent transition">EN</button>
+        </span>
       </div>
     </div>
   </nav>
@@ -62,47 +69,43 @@
   <!-- Hero -->
   <header class="pt-32 pb-20 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">Lever Lab · 专注自动化</p>
+      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4" data-i18n="hero_tagline">Lever Lab · 专注自动化</p>
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-        用 AI 与自动化<br />释放你的业务潜力
+        <span data-i18n="hero_line1">用 AI 与自动化</span><br /><span data-i18n="hero_line2">释放你的业务潜力</span>
       </h1>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8">
-        定制化流程自动化、智能数据处理、集成与运维，让重复工作交给机器，让你专注创造。
-      </p>
-      <a href="#services" class="inline-block px-6 py-2.5 rounded-lg border border-accent/50 text-accent font-medium hover:bg-accent/10 transition">了解服务与案例</a>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-8" data-i18n="hero_desc">定制化流程自动化、智能数据处理、集成与运维，让重复工作交给机器，让你专注创造。</p>
+      <a href="#services" class="inline-block px-6 py-2.5 rounded-lg border border-accent/50 text-accent font-medium hover:bg-accent/10 transition" data-i18n="hero_cta">了解服务与案例</a>
     </div>
   </header>
 
   <!-- 关于 -->
   <section id="about" class="py-16 px-6 bg-surface/20">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-2xl font-bold text-white mb-4">关于 Lever Lab</h2>
-      <p class="text-gray-400 leading-relaxed">
-        Lever Lab 专注用 AI 与自动化帮你省时间、提效率。从需求梳理、方案设计到开发上线与维护，一对一沟通，按需交付，无隐藏条款。
-      </p>
+      <h2 class="text-2xl font-bold text-white mb-4" data-i18n="about_title">关于 Lever Lab</h2>
+      <p class="text-gray-400 leading-relaxed" data-i18n="about_text">Lever Lab 专注用 AI 与自动化帮你省时间、提效率。从需求梳理、方案设计到开发上线与维护，一对一沟通，按需交付，无隐藏条款。</p>
     </div>
   </section>
 
   <!-- 1. 服务介绍 -->
   <section id="services" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-4">服务介绍</h2>
-      <p class="text-gray-400 mb-12 max-w-2xl">我们提供从需求分析到上线维护的一站式 AI 自动化方案。</p>
+      <h2 class="text-3xl font-bold text-white mb-4" data-i18n="services_title">服务介绍</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl" data-i18n="services_intro">我们提供从需求分析到上线维护的一站式 AI 自动化方案。</p>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
           <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">1</div>
-          <h3 class="text-lg font-semibold text-white mb-2">流程自动化</h3>
-          <p class="text-gray-400 text-sm">RPA、工作流编排、API 对接，把重复操作变成一键执行。</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="s1_title">流程自动化</h3>
+          <p class="text-gray-400 text-sm" data-i18n="s1_text">RPA、工作流编排、API 对接，把重复操作变成一键执行。</p>
         </div>
         <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
           <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">2</div>
-          <h3 class="text-lg font-semibold text-white mb-2">智能数据处理</h3>
-          <p class="text-gray-400 text-sm">文档解析、数据清洗、报表生成，让 AI 理解你的业务数据。</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="s2_title">智能数据处理</h3>
+          <p class="text-gray-400 text-sm" data-i18n="s2_text">文档解析、数据清洗、报表生成，让 AI 理解你的业务数据。</p>
         </div>
         <div class="bg-surface/80 rounded-xl p-6 gradient-border glow-sm hover:glow transition">
           <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">3</div>
-          <h3 class="text-lg font-semibold text-white mb-2">集成与运维</h3>
-          <p class="text-gray-400 text-sm">系统对接、监控告警、脚本与工具开发，稳定可靠运行。</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="s3_title">集成与运维</h3>
+          <p class="text-gray-400 text-sm" data-i18n="s3_text">系统对接、监控告警、脚本与工具开发，稳定可靠运行。</p>
         </div>
       </div>
     </div>
@@ -111,28 +114,28 @@
   <!-- 2. 客户案例 -->
   <section id="cases" class="py-20 px-6 bg-surface/30">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-4">客户案例</h2>
-      <p class="text-gray-400 mb-12 max-w-2xl">来自不同行业的落地实践与效果。</p>
+      <h2 class="text-3xl font-bold text-white mb-4" data-i18n="cases_title">客户案例</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl" data-i18n="cases_intro">来自不同行业的落地实践与效果。</p>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-dark rounded-xl p-6 gradient-border">
-          <p class="text-accent text-sm font-medium mb-2">电商 · 订单与库存</p>
-          <h3 class="text-lg font-semibold text-white mb-2">多平台订单自动同步与库存预警</h3>
-          <p class="text-gray-400 text-sm">对接主流电商 API，每日自动同步订单与库存，异常自动告警，人力节省约 60%。</p>
+          <p class="text-accent text-sm font-medium mb-2" data-i18n="c1_tag">电商 · 订单与库存</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="c1_title">多平台订单自动同步与库存预警</h3>
+          <p class="text-gray-400 text-sm" data-i18n="c1_desc">对接主流电商 API，每日自动同步订单与库存，异常自动告警，人力节省约 60%。</p>
         </div>
         <div class="bg-dark rounded-xl p-6 gradient-border">
-          <p class="text-accent text-sm font-medium mb-2">内容 · 运营</p>
-          <h3 class="text-lg font-semibold text-white mb-2">内容采集与多平台一键发布</h3>
-          <p class="text-gray-400 text-sm">从指定来源采集内容，经规则与 AI 润色后自动发布到公众号、知乎等，发布效率提升 3 倍。</p>
+          <p class="text-accent text-sm font-medium mb-2" data-i18n="c2_tag">内容 · 运营</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="c2_title">内容采集与多平台一键发布</h3>
+          <p class="text-gray-400 text-sm" data-i18n="c2_desc">从指定来源采集内容，经规则与 AI 润色后自动发布到公众号、知乎等，发布效率提升 3 倍。</p>
         </div>
         <div class="bg-dark rounded-xl p-6 gradient-border">
-          <p class="text-accent text-sm font-medium mb-2">内部 · 行政</p>
-          <h3 class="text-lg font-semibold text-white mb-2">合同与报销单智能识别与归档</h3>
-          <p class="text-gray-400 text-sm">OCR + 规则提取关键信息，自动归档并触发审批流，处理时间从小时级降到分钟级。</p>
+          <p class="text-accent text-sm font-medium mb-2" data-i18n="c3_tag">内部 · 行政</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="c3_title">合同与报销单智能识别与归档</h3>
+          <p class="text-gray-400 text-sm" data-i18n="c3_desc">OCR + 规则提取关键信息，自动归档并触发审批流，处理时间从小时级降到分钟级。</p>
         </div>
         <div class="bg-dark rounded-xl p-6 gradient-border">
-          <p class="text-accent text-sm font-medium mb-2">开发 · 效能</p>
-          <h3 class="text-lg font-semibold text-white mb-2">CI/CD 与发布自动化</h3>
-          <p class="text-gray-400 text-sm">代码提交触发构建、测试与灰度发布，配合通知与回滚，发布频率与稳定性双提升。</p>
+          <p class="text-accent text-sm font-medium mb-2" data-i18n="c4_tag">开发 · 效能</p>
+          <h3 class="text-lg font-semibold text-white mb-2" data-i18n="c4_title">CI/CD 与发布自动化</h3>
+          <p class="text-gray-400 text-sm" data-i18n="c4_desc">代码提交触发构建、测试与灰度发布，配合通知与回滚，发布频率与稳定性双提升。</p>
         </div>
       </div>
     </div>
@@ -141,28 +144,28 @@
   <!-- 合作流程 -->
   <section id="process" class="py-20 px-6">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-3xl font-bold text-white mb-4">合作流程</h2>
-      <p class="text-gray-400 mb-12 max-w-2xl">从沟通到交付，简单清晰。</p>
+      <h2 class="text-3xl font-bold text-white mb-4" data-i18n="process_title">合作流程</h2>
+      <p class="text-gray-400 mb-12 max-w-2xl" data-i18n="process_intro">从沟通到交付，简单清晰。</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
           <span class="inline-flex w-10 h-10 rounded-full bg-accent/20 text-accent font-bold items-center justify-center mb-3">1</span>
-          <h3 class="text-white font-semibold mb-2">沟通需求</h3>
-          <p class="text-gray-400 text-sm">你描述场景与目标，我帮你梳理可行性与范围。</p>
+          <h3 class="text-white font-semibold mb-2" data-i18n="p1_title">沟通需求</h3>
+          <p class="text-gray-400 text-sm" data-i18n="p1_text">你描述场景与目标，我帮你梳理可行性与范围。</p>
         </div>
         <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
           <span class="inline-flex w-10 h-10 rounded-full bg-accent/20 text-accent font-bold items-center justify-center mb-3">2</span>
-          <h3 class="text-white font-semibold mb-2">方案与报价</h3>
-          <p class="text-gray-400 text-sm">给出技术方案与工期、报价，确认后再开工。</p>
+          <h3 class="text-white font-semibold mb-2" data-i18n="p2_title">方案与报价</h3>
+          <p class="text-gray-400 text-sm" data-i18n="p2_text">给出技术方案与工期、报价，确认后再开工。</p>
         </div>
         <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
           <span class="inline-flex w-10 h-10 rounded-full bg-accent/20 text-accent font-bold items-center justify-center mb-3">3</span>
-          <h3 class="text-white font-semibold mb-2">开发交付</h3>
-          <p class="text-gray-400 text-sm">按约定开发、联调与测试，交付可用的系统或脚本。</p>
+          <h3 class="text-white font-semibold mb-2" data-i18n="p3_title">开发交付</h3>
+          <p class="text-gray-400 text-sm" data-i18n="p3_text">按约定开发、联调与测试，交付可用的系统或脚本。</p>
         </div>
         <div class="bg-surface/80 rounded-xl p-6 gradient-border text-center">
           <span class="inline-flex w-10 h-10 rounded-full bg-accent/20 text-accent font-bold items-center justify-center mb-3">4</span>
-          <h3 class="text-white font-semibold mb-2">维护支持</h3>
-          <p class="text-gray-400 text-sm">交付后可按需续约运维、小改与问题修复。</p>
+          <h3 class="text-white font-semibold mb-2" data-i18n="p4_title">维护支持</h3>
+          <p class="text-gray-400 text-sm" data-i18n="p4_text">交付后可按需续约运维、小改与问题修复。</p>
         </div>
       </div>
     </div>
@@ -171,17 +174,13 @@
   <!-- 3. 联系入口 -->
   <section id="contact" class="py-20 px-6 bg-surface/30">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">联系我</h2>
-      <p class="text-gray-400 mb-8">有需求或想聊聊方案？选一种方式即可。</p>
+      <h2 class="text-3xl font-bold text-white mb-4" data-i18n="contact_title">联系我</h2>
+      <p class="text-gray-400 mb-8" data-i18n="contact_intro">有需求或想聊聊方案？选一种方式即可。</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <button type="button" onclick="openChat()" class="px-8 py-3 rounded-lg bg-accent text-dark font-semibold hover:bg-accentDim transition">
-          实时对话
-        </button>
-        <button type="button" onclick="openFormModal()" class="px-8 py-3 rounded-lg bg-surface border border-border text-gray-200 font-semibold hover:border-accent hover:text-accent transition">
-          留言（填邮箱）
-        </button>
+        <button type="button" onclick="openChat()" class="px-8 py-3 rounded-lg bg-accent text-dark font-semibold hover:bg-accentDim transition" data-i18n="btn_chat">实时对话</button>
+        <button type="button" onclick="openFormModal()" class="px-8 py-3 rounded-lg bg-surface border border-border text-gray-200 font-semibold hover:border-accent hover:text-accent transition" data-i18n="btn_form">留言（填邮箱）</button>
       </div>
-      <p class="text-gray-500 text-sm mt-6">实时对话：立即在页面聊天；留言：填写称呼、邮箱和需求，我会通过邮件回复。</p>
+      <p class="text-gray-500 text-sm mt-6" data-i18n="contact_hint">实时对话：立即在页面聊天；留言：填写称呼、邮箱和需求，我会通过邮件回复。</p>
     </div>
   </section>
 
@@ -189,29 +188,27 @@
   <div id="contact-modal" class="fixed inset-0 z-[100] items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onclick="if(event.target===this) closeContactModal()">
     <div class="bg-surface rounded-xl max-w-md w-full p-6 gradient-border shadow-xl relative" onclick="event.stopPropagation()">
       <button type="button" onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl leading-none" aria-label="关闭">&times;</button>
-      <h3 class="text-xl font-bold text-white mb-2">与我交流</h3>
-      <p class="text-gray-400 text-sm mb-6">留下您的称呼、邮箱和需求，我会尽快通过邮件回复。</p>
+      <h3 class="text-xl font-bold text-white mb-2" data-i18n="modal_title">与我交流</h3>
+      <p class="text-gray-400 text-sm mb-6" data-i18n="modal_intro">留下您的称呼、邮箱和需求，我会尽快通过邮件回复。</p>
       <form class="space-y-4" action="#" method="post" id="contact-form">
         <div>
-          <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1">姓名 / 称呼</label>
-          <input type="text" id="modal-name" name="name" required
+          <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="label_name">姓名 / 称呼</label>
+          <input type="text" id="modal-name" name="name" required data-i18n-placeholder="placeholder_name"
             class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition" placeholder="您的称呼" />
         </div>
         <div>
-          <label for="modal-email" class="block text-sm font-medium text-gray-300 mb-1">邮箱</label>
-          <input type="email" id="modal-email" name="email" required
+          <label for="modal-email" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="label_email">邮箱</label>
+          <input type="email" id="modal-email" name="email" required data-i18n-placeholder="placeholder_email"
             class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition" placeholder="your@email.com" />
         </div>
         <div>
-          <label for="modal-message" class="block text-sm font-medium text-gray-300 mb-1">需求简述</label>
-          <textarea id="modal-message" name="message" rows="4" required
+          <label for="modal-message" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="label_message">需求简述</label>
+          <textarea id="modal-message" name="message" rows="4" required data-i18n-placeholder="placeholder_message"
             class="w-full px-4 py-3 rounded-lg bg-dark border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition resize-none" placeholder="简单描述您的场景或想自动化的流程..."></textarea>
         </div>
-        <button type="submit" class="w-full py-3 px-6 rounded-lg bg-accent text-dark font-semibold hover:bg-accentDim transition">
-          发送
-        </button>
+        <button type="submit" class="w-full py-3 px-6 rounded-lg bg-accent text-dark font-semibold hover:bg-accentDim transition" data-i18n="btn_submit">发送</button>
       </form>
-      <p class="text-gray-500 text-xs mt-4">提交后仅用于回复您，不会外泄或另作他用。</p>
+      <p class="text-gray-500 text-xs mt-4" data-i18n="modal_legal">提交后仅用于回复您，不会外泄或另作他用。</p>
     </div>
   </div>
 
@@ -220,11 +217,11 @@
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-gray-500 text-sm">© 2026 Lever Lab</p>
       <div class="flex gap-6">
-        <a href="#about" class="text-gray-500 hover:text-accent text-sm">关于</a>
-        <a href="#services" class="text-gray-500 hover:text-accent text-sm">服务</a>
-        <a href="#cases" class="text-gray-500 hover:text-accent text-sm">案例</a>
-        <a href="#process" class="text-gray-500 hover:text-accent text-sm">流程</a>
-        <a href="#contact" class="text-gray-500 hover:text-accent text-sm">联系</a>
+        <a href="#about" class="text-gray-500 hover:text-accent text-sm" data-i18n="nav_about">关于</a>
+        <a href="#services" class="text-gray-500 hover:text-accent text-sm" data-i18n="nav_services">服务</a>
+        <a href="#cases" class="text-gray-500 hover:text-accent text-sm" data-i18n="nav_cases">案例</a>
+        <a href="#process" class="text-gray-500 hover:text-accent text-sm" data-i18n="nav_process">流程</a>
+        <a href="#contact" class="text-gray-500 hover:text-accent text-sm" data-i18n="nav_contact">联系</a>
       </div>
     </div>
   </footer>
@@ -243,6 +240,93 @@
   </script>
 
   <script>
+    var I18N = {
+      zh: {
+        page_title: 'Lever Lab | AI 自动化服务',
+        nav_about: '关于', nav_services: '服务', nav_cases: '案例', nav_process: '流程', nav_contact: '联系',
+        hero_tagline: 'Lever Lab · 专注自动化',
+        hero_line1: '用 AI 与自动化', hero_line2: '释放你的业务潜力',
+        hero_desc: '定制化流程自动化、智能数据处理、集成与运维，让重复工作交给机器，让你专注创造。',
+        hero_cta: '了解服务与案例',
+        about_title: '关于 Lever Lab',
+        about_text: 'Lever Lab 专注用 AI 与自动化帮你省时间、提效率。从需求梳理、方案设计到开发上线与维护，一对一沟通，按需交付，无隐藏条款。',
+        services_title: '服务介绍', services_intro: '我们提供从需求分析到上线维护的一站式 AI 自动化方案。',
+        s1_title: '流程自动化', s1_text: 'RPA、工作流编排、API 对接，把重复操作变成一键执行。',
+        s2_title: '智能数据处理', s2_text: '文档解析、数据清洗、报表生成，让 AI 理解你的业务数据。',
+        s3_title: '集成与运维', s3_text: '系统对接、监控告警、脚本与工具开发，稳定可靠运行。',
+        cases_title: '客户案例', cases_intro: '来自不同行业的落地实践与效果。',
+        c1_tag: '电商 · 订单与库存', c1_title: '多平台订单自动同步与库存预警', c1_desc: '对接主流电商 API，每日自动同步订单与库存，异常自动告警，人力节省约 60%。',
+        c2_tag: '内容 · 运营', c2_title: '内容采集与多平台一键发布', c2_desc: '从指定来源采集内容，经规则与 AI 润色后自动发布到公众号、知乎等，发布效率提升 3 倍。',
+        c3_tag: '内部 · 行政', c3_title: '合同与报销单智能识别与归档', c3_desc: 'OCR + 规则提取关键信息，自动归档并触发审批流，处理时间从小时级降到分钟级。',
+        c4_tag: '开发 · 效能', c4_title: 'CI/CD 与发布自动化', c4_desc: '代码提交触发构建、测试与灰度发布，配合通知与回滚，发布频率与稳定性双提升。',
+        process_title: '合作流程', process_intro: '从沟通到交付，简单清晰。',
+        p1_title: '沟通需求', p1_text: '你描述场景与目标，我帮你梳理可行性与范围。',
+        p2_title: '方案与报价', p2_text: '给出技术方案与工期、报价，确认后再开工。',
+        p3_title: '开发交付', p3_text: '按约定开发、联调与测试，交付可用的系统或脚本。',
+        p4_title: '维护支持', p4_text: '交付后可按需续约运维、小改与问题修复。',
+        contact_title: '联系我', contact_intro: '有需求或想聊聊方案？选一种方式即可。',
+        btn_chat: '实时对话', btn_form: '留言（填邮箱）',
+        contact_hint: '实时对话：立即在页面聊天；留言：填写称呼、邮箱和需求，我会通过邮件回复。',
+        modal_title: '与我交流', modal_intro: '留下您的称呼、邮箱和需求，我会尽快通过邮件回复。',
+        label_name: '姓名 / 称呼', label_email: '邮箱', label_message: '需求简述',
+        placeholder_name: '您的称呼', placeholder_email: 'your@email.com', placeholder_message: '简单描述您的场景或想自动化的流程...',
+        btn_submit: '发送', modal_legal: '提交后仅用于回复您，不会外泄或另作他用。',
+        submit_ok: '感谢提交！我会尽快通过邮箱回复您。（未配置表单后端时仅演示）'
+      },
+      en: {
+        page_title: 'Lever Lab | AI & Automation',
+        nav_about: 'About', nav_services: 'Services', nav_cases: 'Cases', nav_process: 'Process', nav_contact: 'Contact',
+        hero_tagline: 'Lever Lab · Automation',
+        hero_line1: 'Unlock your business potential', hero_line2: 'with AI & automation',
+        hero_desc: 'Custom workflows, smart data processing, and integration—so you can focus on what matters.',
+        hero_cta: 'Services & cases',
+        about_title: 'About Lever Lab',
+        about_text: 'Lever Lab focuses on AI and automation to save your time and boost efficiency. From scoping and design to delivery and maintenance—one-on-one, on demand, no hidden terms.',
+        services_title: 'Services', services_intro: 'End-to-end AI automation: from requirements to deployment and support.',
+        s1_title: 'Workflow automation', s1_text: 'RPA, workflow orchestration, API integration—turn repeat tasks into one click.',
+        s2_title: 'Smart data', s2_text: 'Document parsing, data cleaning, reporting—AI that understands your data.',
+        s3_title: 'Integration & ops', s3_text: 'System integration, monitoring, scripts and tools—reliable and stable.',
+        cases_title: 'Case studies', cases_intro: 'Real projects across industries.',
+        c1_tag: 'E-commerce', c1_title: 'Multi-channel order sync & stock alerts', c1_desc: 'Sync orders and inventory via APIs, auto-alert on issues—~60% time saved.',
+        c2_tag: 'Content', c2_title: 'Content aggregation & multi-platform publish', c2_desc: 'Collect, refine with rules/AI, publish to WeChat, Zhihu, etc.—3x faster.',
+        c3_tag: 'Admin', c3_title: 'Contract & expense OCR & filing', c3_desc: 'OCR + rules for key fields, auto-filing and approval—hour-level to minute-level.',
+        c4_tag: 'DevOps', c4_title: 'CI/CD & release automation', c4_desc: 'Build, test, and staged release on commit—higher frequency and stability.',
+        process_title: 'How we work', process_intro: 'From first chat to delivery—clear and simple.',
+        p1_title: 'Discovery', p1_text: 'You describe the scenario; I help scope feasibility and scope.',
+        p2_title: 'Proposal', p2_text: 'Technical plan, timeline, and quote—then we start once you confirm.',
+        p3_title: 'Delivery', p3_text: 'Develop, integrate, test—deliver working system or scripts.',
+        p4_title: 'Support', p4_text: 'Optional ongoing maintenance, small changes, and fixes.',
+        contact_title: 'Get in touch', contact_intro: 'Have a project or question? Pick one option below.',
+        btn_chat: 'Live chat', btn_form: 'Leave a message (email)',
+        contact_hint: 'Live chat: talk now on the page. Message: leave name, email & details—I’ll reply by email.',
+        modal_title: 'Leave a message', modal_intro: 'Share your name, email, and what you need—I’ll reply soon.',
+        label_name: 'Name', label_email: 'Email', label_message: 'Your message',
+        placeholder_name: 'Your name', placeholder_email: 'your@email.com', placeholder_message: 'Describe your scenario or what you want to automate...',
+        btn_submit: 'Send', modal_legal: 'Your details are only used to reply—never shared or used elsewhere.',
+        submit_ok: 'Thanks! I’ll reply by email soon. (Form backend not connected—demo only.)'
+      }
+    };
+    var currentLang = localStorage.getItem('leverlab-lang') || 'zh';
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('leverlab-lang', lang);
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      if (I18N[lang] && I18N[lang].page_title) document.title = I18N[lang].page_title;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][key]) el.textContent = I18N[lang][key];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-placeholder');
+        if (I18N[lang] && I18N[lang][key]) el.placeholder = I18N[lang][key];
+      });
+      var zhBtn = document.getElementById('btn-lang-zh'), enBtn = document.getElementById('btn-lang-en');
+      if (zhBtn && enBtn) {
+        zhBtn.className = lang === 'zh' ? 'px-1.5 font-medium text-accent border-b border-accent' : 'px-1.5 hover:text-accent transition';
+        enBtn.className = lang === 'en' ? 'px-1.5 font-medium text-accent border-b border-accent' : 'px-1.5 hover:text-accent transition';
+      }
+    }
+    document.addEventListener('DOMContentLoaded', function() { setLang(currentLang); });
     function openChat() {
       if (typeof Tawk_API !== 'undefined' && Tawk_API.maximize) Tawk_API.maximize();
     }
@@ -256,7 +340,7 @@
     }
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('感谢提交！我会尽快通过邮箱回复您。（未配置表单后端时仅演示）');
+      alert(I18N[currentLang] && I18N[currentLang].submit_ok ? I18N[currentLang].submit_ok : 'Thank you!');
       closeContactModal();
     });
     document.addEventListener('keydown', function(e) {

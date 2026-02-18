@@ -190,7 +190,9 @@
       <button type="button" onclick="closeContactModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl leading-none" aria-label="关闭">&times;</button>
       <h3 class="text-xl font-bold text-white mb-2" data-i18n="modal_title">与我交流</h3>
       <p class="text-gray-400 text-sm mb-6" data-i18n="modal_intro">留下您的称呼、邮箱和需求，我会尽快通过邮件回复。</p>
-      <form class="space-y-4" action="#" method="post" id="contact-form">
+      <form class="space-y-4" action="/" method="post" id="contact-form" name="contact" data-netlify="true" data-netlify-honeypot="bot">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden" aria-hidden="true"><label>不要填：<input name="bot" tabindex="-1" autocomplete="off" /></label></p>
         <div>
           <label for="modal-name" class="block text-sm font-medium text-gray-300 mb-1" data-i18n="label_name">姓名 / 称呼</label>
           <input type="text" id="modal-name" name="name" required data-i18n-placeholder="placeholder_name"
@@ -271,7 +273,7 @@
         label_name: '姓名 / 称呼', label_email: '邮箱', label_message: '需求简述',
         placeholder_name: '您的称呼', placeholder_email: 'your@email.com', placeholder_message: '简单描述您的场景或想自动化的流程...',
         btn_submit: '发送', modal_legal: '提交后仅用于回复您，不会外泄或另作他用。',
-        submit_ok: '感谢提交！我会尽快通过邮箱回复您。（未配置表单后端时仅演示）'
+        submit_ok: '感谢提交！我会尽快通过邮箱回复您。', submit_err: '发送失败，请稍后重试或直接发邮件联系。'
       },
       en: {
         page_title: 'Lever Lab | AI & Automation',
@@ -303,7 +305,7 @@
         label_name: 'Name', label_email: 'Email', label_message: 'Your message',
         placeholder_name: 'Your name', placeholder_email: 'your@email.com', placeholder_message: 'Describe your scenario or what you want to automate...',
         btn_submit: 'Send', modal_legal: 'Your details are only used to reply—never shared or used elsewhere.',
-        submit_ok: 'Thanks! I’ll reply by email soon. (Form backend not connected—demo only.)'
+        submit_ok: 'Thanks! I’ll reply by email soon.', submit_err: 'Something went wrong. Please try again or email us directly.'
       }
     };
     var currentLang = localStorage.getItem('leverlab-lang') || 'zh';
@@ -340,8 +342,17 @@
     }
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert(I18N[currentLang] && I18N[currentLang].submit_ok ? I18N[currentLang].submit_ok : 'Thank you!');
-      closeContactModal();
+      var form = e.target;
+      var fd = new FormData(form);
+      fd.append('form-name', 'contact');
+      var msg = I18N[currentLang] && I18N[currentLang].submit_ok ? I18N[currentLang].submit_ok : 'Thank you!';
+      var errMsg = I18N[currentLang] && I18N[currentLang].submit_err ? I18N[currentLang].submit_err : 'Please try again.';
+      fetch('/', { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+        .then(function(r) {
+          if (r.ok) { alert(msg); closeContactModal(); form.reset(); }
+          else { alert(errMsg); }
+        })
+        .catch(function() { alert(errMsg); });
     });
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeContactModal();
